@@ -83,6 +83,12 @@
         </div>
       </li>
      
+      <li class="nav-item">
+        <a class="nav-link" href="<?php echo base_url('Admindashboard/donationDetails');?>">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Donation Details</span></a>
+      </li>
+
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>

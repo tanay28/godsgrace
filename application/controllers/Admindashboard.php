@@ -465,5 +465,12 @@ class Admindashboard extends CI_Controller {
     		echo 'error';
     	}
     }
+
+    public function donationDetails(){
+
+    	$this->load->model('Donationmanagement');
+    	$data['donation'] = $this->Donationmanagement->getDonationList();
+    	$this->load->view('admin/donationlist',$data);
+    }
 }
 ?>

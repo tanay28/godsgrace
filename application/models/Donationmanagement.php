@@ -7,4 +7,10 @@ class Donationmanagement extends CI_Model {
 
 		return $this->db->insert('donation_razorpay',$Arrdatas);
 	}
+
+	public function getDonationList(){
+
+		$sql = "SELECT * FROM donation_razorpay ORDER BY id";
+		return $this->db->query($sql)->result_array();		
+	}
 }
