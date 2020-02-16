@@ -468,6 +468,8 @@ class Admindashboard extends CI_Controller {
 
     public function donationDetails(){
 
+    	$checkuservars = $this->session->userdata;
+    	$data['user'] = $checkuservars['useremail'];
     	$this->load->model('Donationmanagement');
     	$data['donation'] = $this->Donationmanagement->getDonationList();
     	$this->load->view('admin/donationlist',$data);
