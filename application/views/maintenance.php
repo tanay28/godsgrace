@@ -58,6 +58,16 @@
 		  width: 40%;
 		}
 	</style>
+	<script type="text/javascript">
+		function noBack()
+         {
+             window.history.forward()
+         }
+        noBack();
+        window.onload = noBack;
+        window.onpageshow = function(evt) { if (evt.persisted) noBack() }
+        window.onunload = function() { void (0) }
+	</script>
 </head>
 <body>
 	<div class="bgimg">
@@ -68,6 +78,8 @@
     		<h1>Page is under maintenance.</h1>
     		<hr>
     		<h5>Inconvenience is regreted.</h5>
+    		<hr>
+    		<!-- <h5><a href="<?php echo base_url('Admindashboard');?>">Back</a></h5> -->
   		</div>
   		<div class="bottomleft">
     		<h5>Coming back soon..</h5>

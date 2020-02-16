@@ -11,7 +11,7 @@ class Admindashboard extends CI_Controller {
 		if(isset($checkuservars['usertype']) && $checkuservars['usertype'] == "ADMIN" && isset($checkuservars['status']) && $checkuservars['status'] == "true"){
 
 			$data['gallery'] = $this->getImages();
-			$data['user'] = $checkuservars['useremail'];
+			$data['user'] = isset($checkuservars['useremail']) ? $checkuservars['useremail'] : "NA";
 			$this->load->view('admin/admindashboard',$data);
 		}else{
 			$this->session->set_userdata('status','login failed..!!Please try again');
@@ -118,14 +118,19 @@ class Admindashboard extends CI_Controller {
 			}
 		}else{
 			$checkuservars = $this->session->userdata;
-			$data['user'] = $checkuservars['useremail'];
+			$data['user'] = isset($checkuservars['useremail']) ? $checkuservars['useremail'] : "NA";
 			$this->load->view('admin/addimages',$data);
 		}
 	}
 	public function Logout()
     {
+    	$checkuservars = $this->session->userdata;
+    	$this->load->model('Usermanagement');
+    	if(isset($checkuservars['useremail'])){
+    		$id = $this->Usermanagement->update_logoutDetails($checkuservars['useremail']);
+    	}
         $this->session->sess_destroy();
-        redirect('home');
+        $this->load->view('logout');
     }
 
     public function disableimage() {
@@ -250,7 +255,7 @@ class Admindashboard extends CI_Controller {
 			redirect('admindashboard/ViewEvent');
 		}else{
 			
-			$data['user'] = $checkuservars['useremail'];
+			$data['user'] = isset($checkuservars['useremail']) ? $checkuservars['useremail'] : "NA";
 			$this->load->model('Eventmanagement');
 			$data['causes'] = $this->Eventmanagement->getCauses();
 			$this->load->view('admin/addevent',$data);
@@ -275,7 +280,7 @@ class Admindashboard extends CI_Controller {
     	}
     	
     	
-    	$data['user'] = $checkuservars['useremail'];
+    	$data['user'] = isset($checkuservars['useremail']) ? $checkuservars['useremail'] : "NA";
     	
     	$this->load->view('admin/viewevent',$data);
     }
@@ -469,7 +474,7 @@ class Admindashboard extends CI_Controller {
     public function donationDetails(){
 
     	$checkuservars = $this->session->userdata;
-    	$data['user'] = $checkuservars['useremail'];
+    	$data['user'] = isset($checkuservars['useremail']) ? $checkuservars['useremail'] : "NA";
     	$this->load->model('Donationmanagement');
     	$data['donation'] = $this->Donationmanagement->getDonationList();
     	$this->load->view('admin/donationlist',$data);

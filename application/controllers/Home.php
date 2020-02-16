@@ -6,13 +6,15 @@ class Home extends CI_Controller {
 	
 	public function index()
 	{
+		$status = false;
 		$checkuservars = $this->session->userdata;
+		$this->load->model('Usermanagement');
+		$status = $this->Usermanagement->is_loggedIn();
 		if(isset($checkuservars['usertype']) && $checkuservars['usertype'] == "ADMIN" && isset($checkuservars['status']) && $checkuservars['status'] == "true"){
-			// echo 'ok';
-			// die;
 			$this->load->view('maintenance');
-		}
-		else{
+		}elseif($status == true){
+			$this->load->view('maintenance');
+		}else{
 			$data = array();
 			$data['gallery'] = $this->getImages();
 			$data['events'] = $this->getEvents();

@@ -20,7 +20,7 @@
 
 </head>
 
-<body id="page-top">
+<body id="page-top" onload="set_interval()"  onload="set_interval()"  onmousemove="reset_interval()" onclick="reset_interval()" onkeypress="reset_interval()" onscroll="reset_interval()">
 
   <!-- Page Wrapper -->
   <div id="wrapper">
@@ -167,3 +167,21 @@
 
         </nav>
         <!-- End of Topbar -->
+
+        <script type="text/javascript">
+          var timer = 0;
+          function set_interval() {
+            timer = setInterval("auto_logout()", 1800000);
+          }
+
+        function reset_interval() {
+            if (timer != 0) {
+              clearInterval(timer);
+              timer = 0;
+              timer = setInterval("auto_logout()", 1800000);
+            }
+        }
+        function auto_logout() {
+            window.location = "<?php echo base_url('Admindashboard/logout')?>";
+        }
+        </script>

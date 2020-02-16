@@ -171,5 +171,36 @@ class Usermanagement extends CI_Model {
             return $this->db->query($sql);   
         }
     }
+
+    public function insert_logindata($loginData){
+
+        return $this->db->insert('login_details',$loginData);
+    }
+
+    public function update_logoutDetails($email){
+
+        $last_id = 0;
+        $sql = "SELECT MAX(id) AS id FROM login_details ORDER BY id";
+        $rs = $this->db->query($sql)->result_array();
+        if(isset($rs[0]['id']) && $rs[0]['id']!=0){
+            $last_id = $rs[0]['id'];
+            $logoutTime = date('y-m-d H:i:s');
+            $sql = "UPDATE login_details SET logout_at = '".$logoutTime."' WHERE email = '".$email."' AND id='".$last_id."'";
+            $this->db->query($sql);
+            $sql = "DELETE FROM login_details WHERE logout_at = '0000-00-00 00:00:00'";
+            $this->db->query($sql);
+            return true; 
+        }      
+    }
+
+    public function is_loggedIn(){
+
+        $sql = "SELECT logout_at FROM login_details WHERE id = (SELECT MAX(id) AS id FROM login_details)";
+        $rs = $this->db->query($sql)->result_array();
+        if(isset($rs[0]['logout_at']) && $rs[0]['logout_at'] == '0000-00-00 00:00:00'){
+            return true;
+        }
+        return false;
+    }
 }
 ?>
