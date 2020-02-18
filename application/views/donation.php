@@ -25,6 +25,24 @@
             font-size: 14px;
             padding: 10px;
         }
+        .off-line{
+            position: relative;
+            left: 10px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        a:link {
+          color: red;
+        }
+        a:visited {
+          color: green;
+        }
+        a:hover {
+          color: hotpink;
+        }
+        a:active {
+          color: blue;
+        }
     </style>
 </head>
 <body>
@@ -36,10 +54,10 @@
                 </h3>
                 <div class="form-group-1">
                     <input type="text" name="name" id="name" placeholder="Your Name" required />
-                    <input type="email" name="email" id="email" placeholder="Email" required />
+                    <input type="email" name="email" id="email" placeholder="Email (Optional)" />
                     <input type="number" name="phone_number" id="phoneno" placeholder="Phone number" required />
                     
-                    <select name="cmbAmount" onchange="getval(this)" id="amount">
+                    <select name="cmbAmount" onchange="getval(this)" id="amount" required="">
                         <option slected value="">Select Amount</option>
                         <option value="100">Rs. 100</option>
                         <option value="500">Rs. 500</option>
@@ -50,8 +68,10 @@
                 </div>
                 <input type="hidden" value="Hidden Element" name="hidden">
                 <input type="submit" name="submit" class="submit donate" value="Donate now" />
+                <a href="<?php echo base_url('Donation/donateOffline');?>" class="off-line">Want donate offline via bank..? Click here for bank details.</a>
             </form>
-            <div >
+
+            <div style="margin-top: 50px">
                 <a class="home-menu" href="<?php echo base_url('Home')?>">Home</a>
             </div>
         </div>
@@ -64,7 +84,7 @@
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <script type="text/javascript">
 
-       document.addEventListener('contextmenu', event => event.preventDefault());
+       //document.addEventListener('contextmenu', event => event.preventDefault());
        function getval(sel){
             var status = sel.value;
             if(status == 'custom'){

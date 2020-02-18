@@ -47,13 +47,6 @@ class Admindashboard extends CI_Controller {
 			    //return array('status' => 'error', 'msg' => 'Sorry, file already exists.');
 			}
 
-			// // Check file size
-			// if ($file["size"] > 2048000)
-			// {
-			//     $uploadOk = 0;
-			//     return array('status' =>'error','msg'=> 'Sorry, your file is too large.');
-			// }
-
 			// Allow certain file formats
 			if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "PNG" && $imageFileType != "jpeg" && $imageFileType != "JPEG" && $imageFileType != "JPG")
 			{

@@ -69,5 +69,9 @@
 			$this->load->view('thankyou');
 		}
 
+		public function donateOffline(){
+			$this->load->view('offlinedonationdetails');
+		}
+
 	}
 ?>
