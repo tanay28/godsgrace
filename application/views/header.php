@@ -33,7 +33,7 @@
 		color    : white;
 		position : fixed;
 	    left: 4px;
-    	top: 33px;
+    	top: 42px;
 	}
 
 	</style>
@@ -62,7 +62,8 @@
 				</div>
 			</div>
 			<h4 class="custom">
-				Gods-Grace Foundation<br><sub>A fight with poverty</sub>
+				Gods-Grace Foundation
+				<!-- <br><sub>A fight with poverty</sub> -->
 			</h4>
 		</nav>
 	</header>

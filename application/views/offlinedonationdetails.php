@@ -78,7 +78,7 @@
                 </tr>
                 <tr>
                     <td>Account Name </td>
-                    <td class="info">Gods Grace Foundation, Baidhyabati</td>
+                    <td class="info">Baidyabati Gods Grace Foundation</td>
                 </tr>
                 <tr>
                     <td>Account No </td>
