@@ -113,7 +113,7 @@
                 var phno = $('#phoneno').val();
                
                 var options = {
-                    "key": "rzp_test_47C753Kg4MNXFP",
+                    "key": "rzp_live_bosk5ADtREBdlW",
                     "amount": (amount * 100), // 2000 paise = INR 20
                     "name": "Godgrace",
                     "description": "Donation",
