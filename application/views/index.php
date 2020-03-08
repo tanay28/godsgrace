@@ -145,7 +145,7 @@
 								
 							</figure>
 							<div class="card_inner_body">
-								<div class="tag">FOOD DISTRIBUTION</div>
+								<div class="tag">Food Distribution</div>
 								<!-- <h4 class="card-title">With help of our volunteers, we distribute healthy meals to those who don’t have adequate or regular access to it.</h4> -->
 							</div>
 						</div>
@@ -184,7 +184,7 @@
 								
 							</figure>
 							<div class="card_inner_body">
-								<div class="tag">WOMEN EMPOWERMENT</div>
+								<div class="tag">Women Empowerment</div>
 								<!-- <h4 class="card-title">Above Hath Fifth Of Open Meat
 									fourth shall meat cattle.</h4> -->
 							</div>
@@ -203,7 +203,7 @@
 								</a>
 							</figure>
 							<div class="card_inner_body">
-								<div class="tag">HEALTHCARE</div>
+								<div class="tag">Permanent Responsibilities</div>
 								<!-- <h4 class="card-title">Above Hath Fifth Of Open Meat
 									fourth shall meat cattle.</h4> -->
 							</div>
@@ -222,7 +222,7 @@
 								</a>
 							</figure>
 							<div class="card_inner_body">
-								<div class="tag">ENVIRONMENT</div>
+								<div class="tag">Environment</div>
 								<!-- <h4 class="card-title">Above Hath Fifth Of Open Meat
 									fourth shall meat cattle.</h4> -->
 							</div>
